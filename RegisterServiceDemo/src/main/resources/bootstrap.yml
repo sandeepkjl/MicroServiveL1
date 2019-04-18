@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: RegisterServiceDemo
+
+
+server:
+  port: 8085
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+  client:
+    serviceUrl:
+      defualtZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    httpclient.wire: DEBUG
+
+
+pivotal:
+  registerservice:
+    name: RegisterServiceDemo
+  tradeservicename:
+    name: TradeService

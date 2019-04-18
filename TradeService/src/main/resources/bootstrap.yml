@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: TradeService
+
+
+server:
+  port: 8090
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+  client:
+    serviceUrl:
+      defualtZone: http://localhost:8761/eureka/
+
+
+pivotal:
+  registerservice:
+    name: RegisterServiceDemo
+  tradeservicename:
+    name: TradeService
